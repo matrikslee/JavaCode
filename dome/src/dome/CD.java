@@ -1,20 +1,29 @@
 package dome;
 
-public class CD extends Item {
-	private int numOfTracks = 0;
-	public CD(String title, int not) {
-		super(title);
-		numOfTracks = not;
-	}
-	public void print(){
-		super.print();
-		System.out.println(numOfTracks);
-	}
-	public int getNot(){ return numOfTracks; }
-	public static void main(String[] args){
-		CD cd = new CD("Owl City",7);
-		cd.print();
-		System.out.println(cd.getNot());
+public class CD {
+	private String title;
+	private String artist;
+	private int numOfTracks;
+	private int playingTime;
+	private boolean gotIt = false;
+	private String comment;
+	
+	public CD(String title, String artist, int numOfTracks, int playingTime,
+			String comment) {
+//		super();
+		this.title = title;
+		this.artist = artist;
+		this.numOfTracks = numOfTracks;
+		this.playingTime = playingTime;
+		this.comment = comment;
 	}
 	
+	public void print(){
+		System.out.println("CD:"+title+":"+artist);
+	}
+
+	public static void main(String[] args) {
+
+	}
+
 }

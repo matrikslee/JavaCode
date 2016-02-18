@@ -3,27 +3,34 @@ package dome;
 import java.util.ArrayList;
 
 public class Database {
-	private ArrayList<Item> items = new ArrayList<Item>();
-	public void addItem(Item i){
-		items.add(i);
+	private ArrayList<CD> listCD = new ArrayList<CD>();
+	private ArrayList<DVD> listDVD = new ArrayList<DVD>();
+	
+	public void add(CD cd){
+		listCD.add(cd);
 	}
+	
+	public void add(DVD dvd){
+		listDVD.add(dvd);
+	}
+	
 	public void list(){
-		for ( Item i : items ) {
-			i.print();
-			System.out.println();
+		for ( CD cd : listCD ){
+			cd.print();
+		}		
+		for ( DVD dvd : listDVD ){
+			dvd.print();
 		}
 	}
 	
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		Database db = new Database();
-		CD cd = new CD("Owl City", 7);
-		DVD dvd = new DVD("大话西游", "周星驰");
-		db.addItem(cd);
-		db.addItem(dvd);
+		db.add(new CD("abc", "abc",4, 60,"..."));
+		db.add(new CD("def", "def",4, 60,"..."));
+		db.add(new DVD("abc", "abc", 60, "..."));
+		db.add(new DVD("dev", "dev", 60, "..."));
 		db.list();
-//		Item i = cd;
-//		i.print();
-//		System.out.println(cd.getNot());
 	}
-	
+
 }
+

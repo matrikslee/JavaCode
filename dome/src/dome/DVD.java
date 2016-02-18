@@ -1,18 +1,27 @@
 package dome;
 
-public class DVD extends Item {
-	private String director = "";
-	DVD(String title, String director) {
-		super(title);
+public class DVD {
+	private String title;
+	private String director;
+	private int playingTime;
+	private boolean gotIt = false;
+	private String comment;
+	
+	public DVD(String title, String director, int playingTime,String comment) {
+//		super();
+		this.title = title;
 		this.director = director;
+		this.playingTime = playingTime;
+		this.comment = comment;
 	}
+		
 	
 	public void print(){
-		super.print();
-		System.out.println(director);
+		System.out.println("DVD:"+title+":"+director);
 	}
-
+	
 	public static void main(String[] args) {
+
 	}
 
 }
