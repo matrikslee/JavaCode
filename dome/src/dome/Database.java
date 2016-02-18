@@ -28,6 +28,7 @@ public class Database {
 //		}
 		for ( Item item : listItem ){
 			item.print();
+			System.out.println();
 		}
 	}
 	
@@ -37,6 +38,7 @@ public class Database {
 		db.add(new CD("def", "def",4, 60,"..."));
 		db.add(new DVD("abc", "abc", 60, "..."));
 		db.add(new DVD("dev", "dev", 60, "..."));
+		db.add(new VedioGame("ddd", 10, true, "...", 4));
 		db.list();
 	}
 
