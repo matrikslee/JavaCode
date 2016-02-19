@@ -20,6 +20,16 @@ import field.View;
 public class FoxAndRabbit {
 	private Field theField;
 	private View theView;
+	private JFrame frame;
+	
+	// 内部类
+	private class StepListener implements ActionListener {
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			step();
+			frame.repaint();
+		}
+	}
 	
 	public FoxAndRabbit(int size) {
 		theField = new Field(size, size);
@@ -34,21 +44,13 @@ public class FoxAndRabbit {
 			}
 		}
 		theView = new View(theField);
-		JFrame frame = new JFrame();
+		frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
 		frame.setTitle("Cells");
 		frame.add(theView, BorderLayout.CENTER);
 		JButton btnStep = new JButton("单步");
-		btnStep.addActionListener(new ActionListener(){
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				// TODO Auto-generated method stub
-				System.out.println("按下啦！");
-				step();
-				theView.repaint();
-			}
-		});
+		btnStep.addActionListener(new StepListener());
 		frame.add(btnStep, BorderLayout.NORTH);
 		frame.pack();
 		frame.setVisible(true);
